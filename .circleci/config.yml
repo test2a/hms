@@ -50,6 +50,7 @@ jobs:
       - run:
           name: Setup Laravel stuffs
           command: |
+            touch .env
             php artisan key:generate
             php artisan migrate --force
       - run: ./vendor/bin/phpunit
