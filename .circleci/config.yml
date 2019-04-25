@@ -9,7 +9,7 @@ jobs:
           MYSQL_ALLOW_EMPTY_PASSWORD: yes
           MYSQL_USER: root
           MYSQL_ROOT_PASSWORD: ''
-          MYSQL_DATABASE: development
+          MYSQL_DATABASE: homestead
 
     working_directory: ~/hms
 
@@ -37,6 +37,9 @@ jobs:
             - ./vendor
           key: v1-dependencies-{{ checksum "composer.json" }}
 
+      - run:
+          name: Create Database
+          command: mysql  -h 127.0.0.1 -u root -e "create database development;"
       - run:
           name: Setup Laravel stuffs
           command: |
