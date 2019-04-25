@@ -49,6 +49,8 @@ jobs:
           command: mysql  -h 127.0.0.1 -u root -e "create database development;"
       - run:
           name: Setup Laravel stuffs
+          environment:
+            APP_KEY: base64:ESl7klA8AvB+ckLLP7F25PYieciMC3J5rbTC1JaHKP8=
           command: |
             touch .env
             php artisan key:generate
