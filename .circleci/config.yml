@@ -4,6 +4,10 @@ jobs:
     docker:
       # Specify the version you desire here
       - image: circleci/php:7.1-browsers
+        environment:
+          MYSQL_ALLOW_EMPTY_PASSWORD: yes
+          MYSQL_USER: root
+          MYSQL_ROOT_PASSWORD: ''
       - image: circleci/mysql:5.7
         environment:
           MYSQL_ALLOW_EMPTY_PASSWORD: yes
