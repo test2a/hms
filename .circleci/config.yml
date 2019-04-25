@@ -53,7 +53,7 @@ jobs:
             touch .env
             php artisan key:generate
             php artisan config:cache
-            php artisan migrate --force
+            php artisan migrate --env=testing --force
       - run: ./vendor/bin/phpunit
 
 workflows:
