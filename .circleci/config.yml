@@ -8,6 +8,9 @@ jobs:
           MYSQL_ALLOW_EMPTY_PASSWORD: yes
           MYSQL_USER: root
           MYSQL_ROOT_PASSWORD: ''
+          DB_USERNAME: root
+          DB_PASSWORD: ''
+          DB_DATABASE: development
       - image: circleci/mysql:5.7
         environment:
           MYSQL_ALLOW_EMPTY_PASSWORD: yes
