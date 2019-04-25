@@ -52,6 +52,7 @@ jobs:
           command: |
             touch .env
             php artisan key:generate
+            php artisan config:cache
             php artisan migrate --force
       - run: ./vendor/bin/phpunit
 
